@@ -13,6 +13,7 @@ const dotenv_1 = require("dotenv");
 //Router
 const UserRoutes_1 = __importDefault(require("./routers/UserRoutes"));
 const AuthRoutes_1 = __importDefault(require("./routers/AuthRoutes"));
+const TodoRoutes_1 = __importDefault(require("./routers/TodoRoutes"));
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -36,6 +37,7 @@ class App {
         });
         this.app.use("/api/v1/users", UserRoutes_1.default);
         this.app.use("/api/v1/auth", AuthRoutes_1.default);
+        this.app.use("/api/v1/todos", TodoRoutes_1.default);
     }
 }
 const port = 8000;

@@ -3,8 +3,7 @@ import { check } from "express-validator/src/middlewares/validation-chain-builde
 import { validationResult } from "express-validator/src/validation-result";
 
 const validate = [
-    check("username").isString(),
-    check("password").isLength({ min: 6 }),
+    check("description").isString(),
     (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
 
