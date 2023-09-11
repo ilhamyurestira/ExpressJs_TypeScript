@@ -14,6 +14,13 @@ const dotenv_1 = require("dotenv");
 const UserRoutes_1 = __importDefault(require("./routers/UserRoutes"));
 const AuthRoutes_1 = __importDefault(require("./routers/AuthRoutes"));
 const TodoRoutes_1 = __importDefault(require("./routers/TodoRoutes"));
+const CakadesRouter_1 = __importDefault(require("./routers/CakadesRouter"));
+const DesaRoutes_1 = __importDefault(require("./routers/DesaRoutes"));
+const TimsesRoutes_1 = __importDefault(require("./routers/TimsesRoutes"));
+const RelawanRoutes_1 = __importDefault(require("./routers/RelawanRoutes"));
+const SimpatisanRoutes_1 = __importDefault(require("./routers/SimpatisanRoutes"));
+const HasilPemilihanRoutes_1 = __importDefault(require("./routers/HasilPemilihanRoutes"));
+const DashboardRouter_1 = __importDefault(require("./routers/DashboardRouter"));
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -38,6 +45,13 @@ class App {
         this.app.use("/api/v1/users", UserRoutes_1.default);
         this.app.use("/api/v1/auth", AuthRoutes_1.default);
         this.app.use("/api/v1/todos", TodoRoutes_1.default);
+        this.app.use("/api/v1/cakades", CakadesRouter_1.default);
+        this.app.use("/api/v1/desa", DesaRoutes_1.default);
+        this.app.use("/api/v1/timses", TimsesRoutes_1.default);
+        this.app.use("/api/v1/relawan", RelawanRoutes_1.default);
+        this.app.use("/api/v1/simpatisan", SimpatisanRoutes_1.default);
+        this.app.use("/api/v1/hasil", HasilPemilihanRoutes_1.default);
+        this.app.use("/api/v1/dashboard", DashboardRouter_1.default);
     }
 }
 const port = 8000;

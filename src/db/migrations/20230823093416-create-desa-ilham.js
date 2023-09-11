@@ -2,20 +2,17 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('todos', {
+    await queryInterface.createTable('desa_ilhams', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.INTEGER,
-        references: {model: 'users', key: 'id'},
-        allowNull: false
-      },
-      description: {
-        type: Sequelize.TEXT
+      nama_desa: {
+        type: Sequelize.STRING(255),
+        allowNull: false,
+        unique: true
       },
       created_at: {
         allowNull: false,
@@ -26,8 +23,11 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+
+    // Reset sequence ke nomor 1 setelah penghapusan data
+    await queryInterface.sequelize.query('ALTER SEQUENCE users_ilham_id_seq RESTART WITH 1;');
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('todos');
+    await queryInterface.dropTable('desa_ilhams');
   }
 };

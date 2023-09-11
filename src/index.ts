@@ -10,6 +10,13 @@ import { config as dotenv } from "dotenv";
 import UserRoutes from "./routers/UserRoutes";
 import AuthRoutes from "./routers/AuthRoutes";
 import TodoRoutes from "./routers/TodoRoutes";
+import CakadesRoutes from "./routers/CakadesRouter";
+import DesaRoutes from "./routers/DesaRoutes";
+import TimsesRoutes from "./routers/TimsesRoutes";
+import RelawanRoutes from "./routers/RelawanRoutes";
+import SimpatisanRoutes from "./routers/SimpatisanRoutes";
+import HasilPemilihanRoutes from "./routers/HasilPemilihanRoutes";
+import DashboardRouter from "./routers/DashboardRouter";
 
 class App {
     public app: Application;
@@ -41,6 +48,13 @@ class App {
         this.app.use("/api/v1/users", UserRoutes);
         this.app.use("/api/v1/auth", AuthRoutes);
         this.app.use("/api/v1/todos", TodoRoutes);
+        this.app.use("/api/v1/cakades", CakadesRoutes);
+        this.app.use("/api/v1/desa", DesaRoutes);
+        this.app.use("/api/v1/timses", TimsesRoutes);
+        this.app.use("/api/v1/relawan", RelawanRoutes);
+        this.app.use("/api/v1/simpatisan", SimpatisanRoutes);
+        this.app.use("/api/v1/hasil", HasilPemilihanRoutes);
+        this.app.use("/api/v1/dashboard", DashboardRouter);
     }
 }
 
